@@ -1,0 +1,103 @@
+/* =====================================================================
+   Composants fonctionnels ajoutés à la maquette
+   (calendrier, validation, résultats de disponibilité, visionneuse).
+   Ils reprennent exactement la palette et les formes de layout.css.
+   ===================================================================== */
+:root { --lodge-error:#b3261e; --lodge-success:#1f6b45; --lodge-cream:#fff3d9; }
+
+.visually-hidden { position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; }
+html:has(dialog[open]) { overflow:hidden; }
+
+/* Réseaux sociaux devenus des liens (tailles identiques à la maquette) */
+.contact-socials>a { display:inline-flex; align-items:center; color:inherit; transition:color .2s; }
+.contact-socials>a:not([aria-disabled]):hover { color:#a56500; }
+.contact-socials>a[aria-disabled] { cursor:default; }
+.contact-socials>a>svg { width:24px; height:24px; }
+.contact-socials>a:last-child>svg { width:34px; height:27px; }
+@media (min-width:901px) and (max-width:1150px) { .contact-socials>a>svg { width:20px; height:20px; } .contact-socials>a:last-child>svg { width:30px; height:23px; } }
+
+/* États des boutons */
+.gold-button:disabled { cursor:not-allowed; filter:grayscale(.7); opacity:.55; transform:none; }
+.gold-button.is-busy { cursor:progress; opacity:.8; filter:none; }
+
+/* ---------- Validation ---------- */
+.is-invalid, .input-shell.is-invalid, .floating-field.is-invalid select { border-color:var(--lodge-error) !important; box-shadow:0 0 0 1px #b3261e2e !important; }
+.floating-field.is-invalid>span { color:var(--lodge-error); }
+.availability__error { grid-column:1/-1; margin:-2px 0 -6px 3px; font-size:12px; line-height:17px; }
+.availability__error:empty { display:none; }
+.form-message { display:inline-flex; align-items:flex-start; gap:8px; }
+.form-message svg { width:16px; height:16px; margin-top:1px; }
+.form-message--error { color:var(--lodge-error); }
+.form-message--success { color:var(--lodge-success); }
+.form-message--info { color:#374b3e; }
+.form-message a { color:#8c5900; text-decoration:underline; }
+
+/* ---------- Calendrier ---------- */
+.lodge-cal { position:absolute; z-index:1000; width:304px; padding:14px 14px 10px; border:1px solid #e1e0e0; border-radius:16px; background:#fff; color:var(--lodge-ink); box-shadow:0 12px 30px #0003; font-family:Arial,Helvetica,sans-serif; }
+.lodge-cal[hidden] { display:none; }
+.lodge-cal.is-loading .lodge-cal__grid { opacity:.55; }
+.lodge-cal__head { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+.lodge-cal__title { font-family:Georgia,'Times New Roman',serif; font-size:17px; font-weight:600; letter-spacing:-.3px; text-transform:capitalize; }
+.lodge-cal__nav { display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%; background:#faf2e7; color:#151515; padding:0; }
+.lodge-cal__nav:hover:not(:disabled) { background:var(--lodge-cream); }
+.lodge-cal__nav:disabled { opacity:.3; cursor:default; }
+.lodge-cal__nav svg { width:18px; height:18px; }
+.lodge-cal__week, .lodge-cal__grid { display:grid; grid-template-columns:repeat(7,1fr); gap:2px; }
+.lodge-cal__week span { font-size:10px; font-weight:700; text-transform:uppercase; text-align:center; color:#6a7180; padding:4px 0 6px; }
+.lodge-cal__day { position:relative; height:37px; border-radius:9px; background:transparent; border:1px solid transparent; color:#101a29; font-size:13px; padding:0; transition:background .15s; }
+.lodge-cal__day:hover:not(:disabled) { background:var(--lodge-cream); border-color:#e7c27a; }
+.lodge-cal__day:disabled { color:#c4c6cc; cursor:not-allowed; }
+.lodge-cal__day.is-today::after { content:''; position:absolute; left:50%; bottom:4px; width:4px; height:4px; margin-left:-2px; border-radius:50%; background:var(--lodge-gold); }
+.lodge-cal__day.is-full { background:#f5f1ec; text-decoration:line-through; }
+.lodge-cal__day.is-in-range { background:var(--lodge-cream); border-radius:0; }
+.lodge-cal__day.is-start, .lodge-cal__day.is-end { background:linear-gradient(#e8aa28 0%,#ce8702 55%,#a26a00 100%); color:#fff; font-weight:700; border-color:#cf8f13; }
+.lodge-cal__day.is-start::after, .lodge-cal__day.is-end::after { background:#fff; }
+.lodge-cal__foot { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:8px; padding-top:9px; border-top:1px solid #efece8; }
+.lodge-cal__hint { font-size:11px; color:#4b5563; line-height:15px; }
+.lodge-cal__legend { display:inline-block; margin-left:6px; padding:0 5px; border-radius:4px; background:#f5f1ec; color:#9aa0aa; text-decoration:line-through; }
+.lodge-cal__close { background:none; color:#a56500; font-size:12px; font-weight:600; padding:4px 2px; }
+.lodge-cal.is-sheet { position:fixed; left:12px; right:12px; bottom:12px; width:auto; max-width:420px; margin:0 auto; box-shadow:0 0 0 100vmax #0007, 0 12px 30px #0004; }
+.lodge-cal.is-sheet .lodge-cal__day { height:42px; font-size:14px; }
+
+/* ---------- Fenêtre de dialogue : variantes ---------- */
+.lodge-dialog--wide { width:720px; }
+.lodge-dialog--gallery { width:1000px; max-width:94vw; padding:18px; }
+#lodge-dialog-content .avail-summary { margin:-4px 0 14px; font-size:13px; color:#4b5563; }
+#lodge-dialog-content .notice { display:flex; gap:10px; align-items:flex-start; margin:0 0 16px; padding:12px 14px; border-radius:10px; border:1px solid #ecd6a4; background:#fffaf0; font-size:13px; line-height:1.5; color:#5b4210; }
+.notice svg { width:18px; height:18px; color:#c68a08; margin-top:1px; }
+.avail-list { list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px; }
+.avail-item { display:grid; grid-template-columns:104px 1fr auto; gap:16px; align-items:center; padding:10px 14px 10px 10px; border:1px solid #e6e4e3; border-radius:14px; background:linear-gradient(#fff,#fcfcfe); box-shadow:0 3px 6px #0000001a; }
+.avail-item img { width:104px; height:76px; object-fit:cover; border-radius:10px; display:block; }
+#lodge-dialog-content .avail-item h3 { font-family:Georgia,'Times New Roman',serif; font-size:18px; font-weight:600; letter-spacing:-.4px; color:#131513; margin:0 0 4px; }
+#lodge-dialog-content .avail-item__status { display:flex; align-items:center; gap:6px; margin:0 0 3px; font-size:12px; line-height:16px; color:#4b5563; }
+.avail-item__status svg { width:15px; height:15px; }
+#lodge-dialog-content .avail-item__status.is-yes { color:var(--lodge-success); font-weight:700; }
+#lodge-dialog-content .avail-item__status.is-no { color:var(--lodge-error); }
+#lodge-dialog-content .avail-item__price { margin:0; font-size:12px; line-height:18px; }
+.avail-item__price strong { color:#bf7b00; font-size:15px; font-weight:600; }
+.avail-item__choose { min-height:38px; font-size:12px; padding:8px 20px; }
+.avail-item.is-unavailable img, .avail-item.is-unavailable h3 { opacity:.55; }
+
+/* Visionneuse de la galerie */
+.lightbox__stage { position:relative; }
+#lodge-dialog-content .lightbox__image { display:block; width:100%; height:min(72vh,640px); object-fit:contain; background:#f4f1ec; border-radius:9px; }
+.lightbox__stage .gallery-arrow { position:absolute; top:50%; transform:translateY(-50%); width:44px; height:44px; box-shadow:0 3px 8px #0003; }
+.lightbox__stage .lightbox__prev { left:12px; }
+.lightbox__stage .lightbox__next { right:12px; }
+.lightbox__meta { display:flex; align-items:baseline; justify-content:space-between; gap:16px; padding:12px 4px 0; }
+#lodge-dialog-content .lightbox__caption { margin:0; font-family:Georgia,'Times New Roman',serif; font-size:16px; }
+.lightbox__counter { font-size:13px; color:#6a7180; white-space:nowrap; }
+
+@media (max-width:600px) {
+  .lodge-dialog { padding:24px 18px 20px; }
+  .lodge-dialog--gallery { padding:12px; }
+  .avail-item { grid-template-columns:76px 1fr; gap:12px; padding:10px; }
+  .avail-item img { width:76px; height:64px; }
+  .avail-item__choose { grid-column:1/-1; width:100%; }
+  #lodge-dialog-content .lightbox__image { height:56vh; }
+  .lightbox__stage .gallery-arrow { width:38px; height:38px; }
+  .availability__error { margin:0; }
+}
+
+/* Galerie : seules les photos de la page en cours sont affichées */
+.gallery-photo[hidden] { display:none; }

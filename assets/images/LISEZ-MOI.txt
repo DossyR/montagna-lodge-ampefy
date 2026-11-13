@@ -1,0 +1,17 @@
+PHOTOS DU SITE — MONTAGNA LODGE AMPEFY
+======================================
+Toutes les photos sont les vraies photos de l'établissement, optimisées
+pour le web (JPEG progressif, sans perte visible de qualité).
+
+  hero-piscine-lac.jpg         Grande bannière (coucher de soleil sur le lac)
+  chambre-suite-vue-lac.jpg    Carte « Suite Vue sur le Lac »
+  chambre-standard.jpg         Carte « Chambre Standard »
+  villa-familiale.jpg          Carte « Villa Familiale »
+  galerie/NN-nom.jpg           Galerie, grand format (visionneuse plein écran)
+  galerie/NN-nom-mini.jpg      Galerie, vignette (chargement rapide)
+
+Remplacer une photo : gardez exactement le même nom de fichier.
+Ajouter une photo à la galerie : déposez la photo et sa vignette dans
+galerie/, puis copiez une ligne <button class="gallery-photo" …> dans
+index.html (section « galerie ») en changeant les noms et le texte.
+Taille conseillée : 1600 px de large (vignette 640 px), moins de 350 Ko.

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b3028">
+  <title>Montagna Lodge — Ampefy</title>
+  <meta name="description" content="Montagna Lodge Ampefy : votre havre de paix avec vue imprenable sur le lac. Piscine, chambres confortables, suite, villa familiale et excursions dans l’Itasy, Madagascar.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Montagna Lodge — Ampefy">
+  <meta property="og:description" content="Votre havre de paix avec vue imprenable sur le lac. Piscine, chambres confortables et panoramas à couper le souffle.">
+  <meta property="og:image" content="https://dossyr.github.io/montagna-lodge-ampefy/assets/images/hero-piscine-lac.jpg">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Montagna Lodge Ampefy",
+    "telephone": "+26134275624",
+    "email": "montagnalodge.ampefy@gmail.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Ampefy", "addressRegion": "Itasy", "addressCountry": "MG" },
+    "priceRange": "150 000 – 350 000 Ar / nuit",
+    "amenityFeature": ["Piscine", "Wi-Fi gratuit", "Parking sécurisé", "Petit-déjeuner", "Transfert aéroport"]
+  }
+  </script>
+</head>
+<body>
+  <main>
+    <section class="lodge-hero" id="accueil">
+      <img class="lodge-hero__image" src="assets/images/hero-piscine-lac.jpg" alt="Piscine du lodge face au lac au coucher du soleil, Ampefy" fetchpriority="high">
+      <div class="lodge-hero__shade"></div>
+      <header class="lodge-header">
+        <a class="lodge-logo" href="#accueil" aria-label="Montagna Lodge Ampefy — Accueil">
+          <svg class="lodge-logo__mountains" viewBox="0 0 100 36" fill="none" aria-hidden="true"><path d="M3 31 29 5l25 25M39 31 65 5l26 26M16 25l13-13 10 10M53 24l12-12 12 12M16 25l13-4 10 1M53 24l12-4 12 4" stroke="currentColor" stroke-width="2.7"/></svg>
+          <strong>MONTAGNA LODGE</strong><span>AMPEFY</span>
+        </a>
+        <nav class="lodge-nav" id="lodge-nav" aria-label="Navigation principale">
+          <a class="is-active" href="#accueil" aria-current="true">Accueil</a><a href="#hebergements">Hébergements</a><a href="#services">Services</a><a href="#galerie">Galerie</a><a href="#activites">Activités</a><a href="#avis" data-open-reviews>Avis</a><a href="#contact">Contact</a>
+        </nav>
+        <a class="gold-button lodge-header__book" href="#reservation">RÉSERVER</a>
+        <button class="menu-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="lodge-nav"><i data-lucide="menu"></i></button>
+      </header>
+      <div class="lodge-hero__copy">
+        <h1>Votre <em>havre de paix</em><br>avec vue imprenable <br>sur le lac</h1>
+        <span class="gold-line"></span>
+        <p>Profitez d’un séjour inoubliable dans un cadre naturel exceptionnel, <br>avec piscine, chambres confortables et panoramas à couper le souffle.</p>
+        <a class="gold-button lodge-hero__book" href="#reservation"><i data-lucide="calendar-days"></i> RÉSERVER MAINTENANT</a>
+      </div>
+    </section>
+
+    <form class="availability" id="availability-form" novalidate>
+      <label class="availability__field"><span>ARRIVÉE</span><div class="input-shell"><i data-lucide="calendar-days"></i><input id="arrival" name="arrival" type="text" inputmode="numeric" placeholder="JJ/MM/AAAA" required aria-label="Date d’arrivée"></div></label>
+      <label class="availability__field"><span>DÉPART</span><div class="input-shell"><i data-lucide="calendar-days"></i><input id="departure" name="departure" type="text" inputmode="numeric" placeholder="JJ/MM/AAAA" required aria-label="Date de départ"></div></label>
+      <label class="availability__field"><span>ADULTES</span><div class="input-shell"><i data-lucide="user-round"></i><select id="adults" name="adults" aria-label="Nombre d’adultes"><option value="1">1 adulte</option><option value="2" selected>2 adultes</option><option value="3">3 adultes</option><option value="4">4 adultes</option><option value="5">5 adultes</option><option value="6">6 adultes</option></select></div></label>
+      <label class="availability__field"><span>ENFANTS</span><div class="input-shell"><i data-lucide="users-round"></i><select id="children" name="children" aria-label="Nombre d’enfants"><option value="0">0 enfant</option><option value="1">1 enfant</option><option value="2">2 enfants</option><option value="3">3 enfants</option><option value="4">4 enfants</option></select></div></label>
+      <button class="gold-button availability__submit" type="submit">VÉRIFIER LA DISPONIBILITÉ</button>
+      <p class="availability__error" id="availability-error" role="alert"></p>
+    </form>
+
+    <section class="stays" id="hebergements">
+      <div class="stays__heading"><div><p class="section-kicker">NOS HÉBERGEMENTS</p><h2>Des chambres confortables <br>pour un séjour parfait</h2></div><div class="stays__intro"><p>Nous proposons différents types d’hébergements adaptés à <br>vos besoins. Confort, tranquillité et service attentionné garantis.</p><a class="outline-button" href="#chambres">VOIR TOUTES LES CHAMBRES <i data-lucide="arrow-right"></i></a></div></div>
+      <div class="room-grid" id="chambres">
+        <article class="room-card" data-room-id="suite-lac"><img src="assets/images/chambre-suite-vue-lac.jpg" alt="Salon de la suite avec grande baie vitrée ouverte sur le lac"><div class="room-card__body"><h3>Suite Vue sur le Lac</h3><ul class="room-card__amenities"><li><i data-lucide="users-round"></i>2–4 personnes</li><li><i data-lucide="bed-double"></i>1 lit King Size</li><li><i data-lucide="wifi"></i>Wi-Fi</li></ul><p class="room-card__description">Profitez d’une vue panoramique sur le lac <br>depuis cette suite spacieuse.</p><p class="room-card__price">à partir de <strong>250 000 <small>Ar</small></strong>/nuit</p><div class="room-card__action"><button class="outline-button" data-room="Suite Vue sur le Lac" type="button">VOIR LES DÉTAILS <i data-lucide="arrow-right"></i></button></div></div></article>
+        <article class="room-card" data-room-id="standard"><img src="assets/images/chambre-standard.jpg" alt="Chambre standard avec lit double et fenêtre sur le jardin"><div class="room-card__body"><h3>Chambre Standard</h3><ul class="room-card__amenities"><li><i data-lucide="users-round"></i>2 personnes</li><li><i data-lucide="bed-double"></i>1 lit Double</li><li><i data-lucide="fan"></i>Ventilateur</li></ul><p class="room-card__description">Chambre confortable et fonctionnelle, idéale <br>pour un séjour en toute simplicité.</p><p class="room-card__price">à partir de <strong>150 000 <small>Ar</small></strong>/nuit</p><div class="room-card__action"><button class="outline-button" data-room="Chambre Standard" type="button">VOIR LES DÉTAILS <i data-lucide="arrow-right"></i></button></div></div></article>
+        <article class="room-card" data-room-id="villa"><img src="assets/images/villa-familiale.jpg" alt="Séjour, salle à manger et cuisine équipée de la villa familiale"><div class="room-card__body"><h3>Villa Familiale</h3><ul class="room-card__amenities"><li><i data-lucide="users-round"></i>4–6 personnes</li><li><i data-lucide="bed-double"></i>2 chambres</li><li><i data-lucide="utensils"></i>Cuisine équipée</li></ul><p class="room-card__description">Idéale pour les familles ou groupes, avec tout <br>le confort d’une maison.</p><p class="room-card__price">à partir de <strong>350 000 <small>Ar</small></strong>/nuit</p><div class="room-card__action"><button class="outline-button" data-room="Villa Familiale" type="button">VOIR LES DÉTAILS <i data-lucide="arrow-right"></i></button></div></div></article>
+      </div>
+    </section>
+
+    <section class="lodge-services" id="services">
+      <div class="lodge-services__intro"><p class="section-kicker">NOS SERVICES</p><h2>Tout pour rendre votre <br>séjour inoubliable</h2></div>
+      <div class="service-grid">
+        <article class="service-item"><i data-lucide="waves-ladder"></i><div><h3>Piscine</h3><p>Détente et baignade <br>dans un cadre agréable.</p></div></article>
+        <article class="service-item"><i data-lucide="wifi"></i><div><h3>Wi-Fi gratuit</h3><p>Restez connecté <br>pendant votre séjour.</p></div></article>
+        <article class="service-item"><i data-lucide="circle-parking"></i><div><h3>Parking sécurisé</h3><p>Stationnement privé <br>et sécurisé.</p></div></article>
+        <article class="service-item"><i data-lucide="coffee"></i><div><h3>Petit-déjeuner</h3><p>Savourez un petit-déjeuner <br>local et varié.</p></div></article>
+        <article class="service-item" id="activites"><i data-lucide="trees"></i><div><h3>Balades et nature</h3><p>Découvrez la beauté <br>des environs.</p></div></article>
+        <article class="service-item"><i data-lucide="map"></i><div><h3>Excursions</h3><p>Découverte des villages <br>et des sites touristiques.</p></div></article>
+        <article class="service-item"><i data-lucide="plane"></i><div><h3>Transfert aéroport</h3><p>Service de transport <br>disponible.</p></div></article>
+        <article class="service-item"><i data-lucide="headset"></i><div><h3>Assistance 24/7</h3><p>Notre équipe est <br>à votre écoute.</p></div></article>
+      </div>
+    </section>
+
+    <section class="lodge-gallery" id="galerie">
+      <p class="section-kicker">GALERIE</p><h2>Découvrez notre établissement</h2>
+      <div class="lodge-gallery__carousel"><button class="gallery-arrow gallery-arrow--previous" type="button" aria-label="Photos précédentes"><i data-lucide="chevron-left"></i></button><div class="lodge-gallery__track">
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Salon avec vue sur le lac" data-full="assets/images/galerie/01-salon-vue-lac.jpg"><img src="assets/images/galerie/01-salon-vue-lac-mini.jpg" alt="Salon avec vue sur le lac" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Chambre ouverte sur la piscine et le lac" data-full="assets/images/galerie/02-chambre-vue-piscine.jpg"><img src="assets/images/galerie/02-chambre-vue-piscine-mini.jpg" alt="Chambre ouverte sur la piscine et le lac" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Piscine, parasols et transats face au lac" data-full="assets/images/galerie/03-piscine-transats.jpg"><img src="assets/images/galerie/03-piscine-transats-mini.jpg" alt="Piscine, parasols et transats face au lac" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Salle de bain avec douche à l’italienne" data-full="assets/images/galerie/04-salle-de-bain.jpg"><img src="assets/images/galerie/04-salle-de-bain-mini.jpg" alt="Salle de bain avec douche à l’italienne" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Vue sur le lac depuis les jardins et la piscine" data-full="assets/images/galerie/05-vue-lac-piscine.jpg"><img src="assets/images/galerie/05-vue-lac-piscine-mini.jpg" alt="Vue sur le lac depuis les jardins et la piscine" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Baignade dans la piscine avec vue sur le lac" data-full="assets/images/galerie/06-piscine-lac.jpg"><img src="assets/images/galerie/06-piscine-lac-mini.jpg" alt="Baignade dans la piscine avec vue sur le lac" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Bungalows colorés et allées fleuries" data-full="assets/images/galerie/07-bungalows.jpg"><img src="assets/images/galerie/07-bungalows-mini.jpg" alt="Bungalows colorés et allées fleuries" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Séjour et cuisine équipée de la villa" data-full="assets/images/galerie/08-villa-sejour-cuisine.jpg"><img src="assets/images/galerie/08-villa-sejour-cuisine-mini.jpg" alt="Séjour et cuisine équipée de la villa" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Chambre avec deux lits doubles et vue sur le lac" data-full="assets/images/galerie/09-chambre-deux-lits.jpg"><img src="assets/images/galerie/09-chambre-deux-lits-mini.jpg" alt="Chambre avec deux lits doubles et vue sur le lac" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Chambre double avec salle d’eau" data-full="assets/images/galerie/10-chambre-bordeaux.jpg"><img src="assets/images/galerie/10-chambre-bordeaux-mini.jpg" alt="Chambre double avec salle d’eau" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Chambre familiale avec lits simples et lits superposés" data-full="assets/images/galerie/11-chambre-familiale.jpg"><img src="assets/images/galerie/11-chambre-familiale-mini.jpg" alt="Chambre familiale avec lits simples et lits superposés" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Piscine au pied des villas et de la colline" data-full="assets/images/galerie/12-piscine-villas.jpg"><img src="assets/images/galerie/12-piscine-villas-mini.jpg" alt="Piscine au pied des villas et de la colline" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Kiosque dans le jardin face au lac" data-full="assets/images/galerie/13-kiosque-jardin.jpg"><img src="assets/images/galerie/13-kiosque-jardin-mini.jpg" alt="Kiosque dans le jardin face au lac" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Vue aérienne du Montagna Lodge" data-full="assets/images/galerie/14-vue-aerienne.jpg"><img src="assets/images/galerie/14-vue-aerienne-mini.jpg" alt="Vue aérienne du Montagna Lodge" loading="lazy"></button>
+        <button class="gallery-photo" type="button" aria-label="Agrandir : Le lodge illuminé lors d’une soirée" data-full="assets/images/galerie/15-soiree-vue-aerienne.jpg"><img src="assets/images/galerie/15-soiree-vue-aerienne-mini.jpg" alt="Le lodge illuminé lors d’une soirée" loading="lazy"></button>
+      </div><button class="gallery-arrow gallery-arrow--next" type="button" aria-label="Photos suivantes"><i data-lucide="chevron-right"></i></button></div>
+      <div class="gallery-dots" aria-label="Pages de la galerie"><button type="button" class="is-current" aria-label="Page 1" aria-pressed="true"></button><button type="button" aria-label="Page 2" aria-pressed="false"></button><button type="button" aria-label="Page 3" aria-pressed="false"></button></div>
+    </section>
+  </main>
+
+  <footer class="lodge-footer" id="contact">
+    <section class="contact-block"><h2>CONTACTEZ-NOUS</h2><a href="tel:+26134275624" data-contact="phone"><i data-lucide="phone"></i><span>034 27 56 24</span></a><a href="mailto:montagnalodge.ampefy@gmail.com" data-contact="email"><i data-lucide="mail"></i><span>montagnalodge.ampefy@gmail.com</span></a><p><i data-lucide="map-pin"></i>Ampefy, Itasy, Madagascar</p><div class="contact-socials" aria-label="Réseaux sociaux"><a data-social="facebook" aria-label="Facebook" target="_blank" rel="noopener"><span class="contact-socials__facebook">f</span></a><a data-social="instagram" aria-label="Instagram" target="_blank" rel="noopener"><i data-lucide="instagram"></i></a><a data-social="tripadvisor" aria-label="Tripadvisor" target="_blank" rel="noopener"><svg viewBox="0 0 38 26" fill="none" aria-hidden="true"><path d="M1 5h36l-5 5M1 5l5 5M8 5C14-1 25-1 31 5M17 13l2 4 3-4" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="15" r="8" stroke="currentColor" stroke-width="2"/><circle cx="28" cy="15" r="8" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="15" r="3" stroke="currentColor" stroke-width="2"/><circle cx="28" cy="15" r="3" stroke="currentColor" stroke-width="2"/></svg></a></div></section>
+    <section class="reservation-block" id="reservation"><h2>RÉSERVATION RAPIDE</h2><form class="reservation-form" id="reservation-form" novalidate>
+      <div class="reservation-form__identity"><input type="text" name="name" placeholder="Nom complet" aria-label="Nom complet" autocomplete="name" required maxlength="80"><input type="email" name="email" placeholder="Email" aria-label="Email" autocomplete="email" required maxlength="120"><input type="tel" name="phone" placeholder="Téléphone" aria-label="Téléphone" autocomplete="tel" required maxlength="25"></div>
+      <div class="reservation-form__dates"><label class="input-shell"><input type="text" name="arrival" inputmode="numeric" placeholder="Arrivée" aria-label="Arrivée (JJ/MM/AAAA)" required><i data-lucide="calendar-days"></i></label><label class="input-shell"><input type="text" name="departure" inputmode="numeric" placeholder="Départ" aria-label="Départ (JJ/MM/AAAA)" required><i data-lucide="calendar-days"></i></label><label class="floating-field"><span>Adultes</span><select name="adults" aria-label="Adultes"><option value="1">1 adulte</option><option value="2" selected>2 adultes</option><option value="3">3 adultes</option><option value="4">4 adultes</option><option value="5">5 adultes</option><option value="6">6 adultes</option></select></label><label class="floating-field"><span>Enfants</span><select name="children" aria-label="Enfants"><option value="0">0 enfant</option><option value="1">1 enfant</option><option value="2">2 enfants</option><option value="3">3 enfants</option><option value="4">4 enfants</option></select></label></div>
+      <div class="reservation-form__last"><label class="floating-field"><span>Type de chambre</span><select name="room" aria-label="Type de chambre" required><option value="">Choisir une chambre</option><option value="suite-lac">Suite Vue sur le Lac</option><option value="standard">Chambre Standard</option><option value="villa">Villa Familiale</option></select></label><button class="gold-button" type="submit">RÉSERVER MAINTENANT <i data-lucide="arrow-right"></i></button></div>
+      <div class="visually-hidden" aria-hidden="true"><label>Ne pas remplir <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+      <p class="reservation-status" id="reservation-status" role="status" aria-live="polite"></p>
+    </form></section>
+  </footer>
+  <dialog class="lodge-dialog" id="lodge-dialog" aria-labelledby="lodge-dialog-title"><button class="lodge-dialog__close" type="button" aria-label="Fermer"><i data-lucide="x"></i></button><div id="lodge-dialog-content"></div></dialog>
+
+  <script src="js/config.js"></script>
+  <script src="js/icons.js"></script>
+  <script src="js/dates.js"></script>
+  <script src="js/booking-service.js"></script>
+  <script src="js/datepicker.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
